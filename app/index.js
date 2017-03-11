@@ -5,9 +5,9 @@ const
 const ArtImage = React.createClass({
 	render(){
 		return (
-			<img src="http://www.fridakahlo.it/files_eventi/15/scheda/37_frida_portrait" />
+			<img src={this.props.imageUrl} />
 			);
 	}
 });
 
-ReactDOM.render(<ArtImage />, document.getElementById('app'))
+ReactDOM.render(<ArtImage imageUrl = "http://www.fridakahlo.it/files_eventi/15/scheda/37_frida_portrait"/>, document.getElementById('app'))
