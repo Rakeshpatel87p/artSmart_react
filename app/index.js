@@ -2,12 +2,12 @@ const
 	React = require('react'),
 	ReactDOM = require('react-dom');
 
-const HelloWorld = React.createClass({
+const ArtImage = React.createClass({
 	render(){
 		return (
-			<div>Hello World</div>
+			<img src="http://www.fridakahlo.it/files_eventi/15/scheda/37_frida_portrait" />
 			);
 	}
 });
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'))
+ReactDOM.render(<ArtImage />, document.getElementById('app'))
