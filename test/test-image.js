@@ -11,7 +11,6 @@ describe('ArtImage component', function() {
 		var renderer = TestUtils.createRenderer();
 		renderer.render(<ArtImage imageUrl ={url} />);
 		var result = renderer.getRenderOutput();
-		console.log(result.type);
 		result.type.should.equal('img');
 		result.props.src.should.equal(url);
 	});
