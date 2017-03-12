@@ -11,9 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^3.0.2"
+    "react-router": "^3.0.2",
+    "unirest": "^0.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
