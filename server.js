@@ -14,7 +14,7 @@ const server = app.listen(process.env.PORT || 8000, () => {
     console.log('App now running on port', port);
 });
 
-// Gets artwork from artsy
+// Gets random artwork from artsy
 app.get('/artworks', (req, response) => {
     unirest.post('https://api.artsy.net/api/tokens/xapp_token')
         .headers({ 'Accept': 'application/json' })
