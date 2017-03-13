@@ -3,7 +3,10 @@ const backgroundImage = require('../utils/getBackgroundImage')
 
 const ArtImage = React.createClass({
 	render(){
-		console.log(backgroundImage.getBackgroundImageAxios());
+		backgroundImage.getBackgroundImageAxios()
+			.then(function(info){
+				console.log(info)
+			});
 		return (
 			<img src={this.props.imageUrl} />
 		);

@@ -16,8 +16,14 @@ var backgroundImage = {
     		client_secret: "de9378d3d12c2cbfb24221e8b96d212c"
         })
         .then(function(info){
-        	console.log(info);
-        	console.log(info.data.token)
+        	return info.data.token;
+        })
+        .then(function(tokenLogin){
+        	let configHeaders = {
+        		headers: {'Accept': 'application/json', 'X-XAPP-Token': tokenLogin}
+        	};
+
+        	return axios.get('https://api.artsy.net/api/artworks?sample=1', configHeaders)
         })
         .catch(function(error){
         	console.log(error)
