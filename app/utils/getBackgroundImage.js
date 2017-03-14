@@ -12,11 +12,7 @@ var backgroundImage = {
     // },
 
     getBackgroundImageAxios() {
-        let configHeaders = {
-            headers: { 'Accept': 'application/json', 'X-XAPP-Token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0OTAwMzYzMTgsImlhdCI6MTQ4OTQzMTUxOCwiYXVkIjoiNTdkYmU1MGZjZDUzMGU2NjA3MDAwMGE1IiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjU4YzZlYmRlYTA5YTY3NWRkMjU2MGFkMiJ9.m9uq_scx0fMST4w6kL91DhZ3ryXU7jGTyuJwiADi2Ec' }
-        };
-
-        return axios.get('https://api.artsy.net/api/artworks?sample=1', configHeaders)
+        return axios.get('/artworks')
         	.then(function(data) {
                 console.log(data)
             })

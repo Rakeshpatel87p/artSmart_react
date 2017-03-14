@@ -2,11 +2,13 @@ const
     express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    unirest = require('unirest');
+    unirest = require('unirest'),
+    path=require('path');
 
+// app.use(express.static(__dirname));
+app.use('/dist', express.static(__dirname + '/dist'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(__dirname));
 
 const server = app.listen(process.env.PORT || 8080, () => {
     let port = server.address().port;
