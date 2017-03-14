@@ -10,25 +10,41 @@ var backgroundImage = {
     //             // This is where you run code if the server returns any errors
     //         })
     // },
-    getBackgroundImageAxios() {
-        return axios.post('https://api.artsy.net/api/tokens/xapp_token', {
-        	client_id: "cd7051715d376f899232", 
-    		client_secret: "de9378d3d12c2cbfb24221e8b96d212c"
-        })
-        .then(function(info){
-        	return info.data.token;
-        })
-        .then(function(tokenLogin){
-        	let configHeaders = {
-        		headers: {'Accept': 'application/json', 'X-XAPP-Token': tokenLogin}
-        	};
 
-        	return axios.get('https://api.artsy.net/api/artworks?sample=1', configHeaders)
-        })
-        .catch(function(error){
-        	console.log(error)
-        })
+    getBackgroundImageAxios() {
+        let configHeaders = {
+            headers: { 'Accept': 'application/json', 'X-XAPP-Token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE0OTAwMzYzMTgsImlhdCI6MTQ4OTQzMTUxOCwiYXVkIjoiNTdkYmU1MGZjZDUzMGU2NjA3MDAwMGE1IiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjU4YzZlYmRlYTA5YTY3NWRkMjU2MGFkMiJ9.m9uq_scx0fMST4w6kL91DhZ3ryXU7jGTyuJwiADi2Ec' }
+        };
+
+        return axios.get('https://api.artsy.net/api/artworks?sample=1', configHeaders)
+        	.then(function(data) {
+                console.log(data)
+            })
+            .catch(function(err) {
+                console.log(err)
+            })
+
     }
+    // getBackgroundImageAxios() {
+    //     return axios.post('https://api.artsy.net/api/tokens/xapp_token', {
+    //             client_id: "cd7051715d376f899232",
+    //             client_secret: "de9378d3d12c2cbfb24221e8b96d212c"
+    //         })
+    //         .then(function(info) {
+    //             console.log(info.data.token);
+    //             return info.data.token;
+    //         })
+    //         .then(function(tokenLogin) {
+    //             let configHeaders = {
+    //                 headers: { 'Accept': 'application/json', 'X-XAPP-Token': tokenLogin }
+    //             };
+
+    //             return axios.get('https://api.artsy.net/api/artworks?sample=1', configHeaders)
+    //         })
+    //         .catch(function(error) {
+    //             console.log(error)
+    //         })
+    // }
 
 };
 
